@@ -73,17 +73,17 @@ def division_recursive(p1: Polynomial, p2: Polynomial):
 
     leading_coeff = c1[-1] / c2[-1]
     result_degree = len(c1) - len(c2)
-    term = Polynomial([0] * result_degree + [leading_coeff])
-    remainder = subtraction(p1, multiplication(term, p2))
+    quof = Polynomial([0] * result_degree + [leading_coeff])
+    remainder = subtraction(p1, multiplication(quof, p2))
     
     if remainder.get()[-1] == 0:
         remainder = Polynomial(remainder.get()[:-1])
     partial_quotient, remainder = division_recursive(remainder, p2)
     
-    final_quotient = sum(term, partial_quotient)
-    print('TERMO', term.get(), '\nPARTIAL', partial_quotient.get(),'\nFINAL',final_quotient.get(),'\n------')
+    final_quotient = sum(quof, partial_quotient)
+    print('TERMO', quof.get(), '\nPARTIAL', partial_quotient.get(),'\nFINAL',final_quotient.get(),'\n------')
     
-    return term, remainder
+    return quof, remainder
 
         
 '''
