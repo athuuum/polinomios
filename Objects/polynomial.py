@@ -1,4 +1,4 @@
-class Polymonial():
+class Polynomial():
     def __init__(self, coefficients):
         self.coefficients = coefficients
         mdc = coefficients[0]  # Começar com o primeiro número
@@ -33,4 +33,4 @@ class Polymonial():
         return self.coefficients
     
     def get_degree(self):
-        return len(self.coefficients)-1
+        return int(len(self.coefficients)-1)

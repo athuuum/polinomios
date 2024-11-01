@@ -7,7 +7,7 @@ for j in range(degree+1):
     coefficient = float(input(f"x^{j}: "))
     coefficients.append(coefficient)
 
-polynomial = Polymonial(coefficients)
+polynomial = Polynomial(coefficients)
 
 print(polynomial.get())
 print("""
@@ -64,6 +64,7 @@ elif choice == 6:
     if degree == 3 and coeffs[0] > 0 and coeffs[3] < 0 and coeffs[2] == 0 and coeffs[1] == 0:
         a = coeffs[0] ** (1/3)
         b = abs(coeffs[3]) ** (1/3) 
+
         factorized = f"({a}x - {b})({a**2}x^2 + {a*b}x + {b**2})"
         print(factorized)
     else: 

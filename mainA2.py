@@ -1,6 +1,8 @@
+from Objects.operations import *
+from Objects.polynomial import *
 
-qtd_polynomial = int(input("Quantos polinomios? "))
 
+qtd_polynomial = int(input("Quantos polinômios? "))
 
 if qtd_polynomial > 1:
 
@@ -12,20 +14,15 @@ if qtd_polynomial > 1:
         for j in range(degree+1):
             coefficient = int(input(f"Coeficiente nº{j}: "))
             coefficients.append(coefficient)
-        polynomials.append(coefficients)
-    print(polynomials)
+        poly = Polynomial(coefficients)
+        polynomials.append(poly)
 
-    #Somar
-    for i in range(len(polynomials)):
-        if len(polynomials[i]) < 3:
-            polynomials[i] += [0] * (3 - len(polynomials[i]))
+    #Subtrair
+    result = polynomials[0]
+    for poly in polynomials[1:]:
+        result = subtraction(result, poly)
 
-    result = polynomials[0][:]
-    for polynomial in polynomials:
-        for i in range(3):
-            result[i] -= polynomial[i]
-        
-    print("Resultado da soma dos polinômios:", result)
+    print("Subtração: ", result.get())
 
 
 
